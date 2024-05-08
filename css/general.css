@@ -92,6 +92,7 @@ body {
   margin-bottom: 0;
 } */
 
+/* grid that is not the last child will have this margin !!!! */
 .grid:not(:last-child) {
   margin-bottom: 9.6rem;
 }
