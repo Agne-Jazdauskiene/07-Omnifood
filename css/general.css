@@ -72,6 +72,9 @@ html {
   font-size: 62.5%;
   /* making meniu - mobile version */
   overflow-x: hidden;
+
+  /* Does not work on Safari or Microsoft Edge */
+  /* scroll-behavior: smooth; */
 }
 
 body {

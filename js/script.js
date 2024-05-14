@@ -13,6 +13,7 @@ console.log(h1);
 
 ///////////////////////////////////////////////////////////
 // SET CURRENT YEAR
+
 const yearEl = document.querySelector(".year");
 const currentYear = new Date().getFullYear();
 console.log(currentYear);
@@ -27,6 +28,39 @@ const headerEl = document.querySelector(".header");
 // toggle - adding and removint all at the same time
 btnNavEl.addEventListener("click", function () {
   headerEl.classList.toggle("nav-open"); //rašome be taško, tik klasės pavadinimas -> nav-open
+});
+
+///////////////////////////////////////////////////////////
+// SMOOTH SCROLLING ANIMATION
+
+const allLinks = document.querySelectorAll("a:link");
+
+allLinks.forEach(function (link) {
+  link.addEventListener("click", function (e) {
+    //e => event
+    e.preventDefault();
+    const href = link.getAttribute("href");
+    // console.log(href);
+
+    // Scroll back to the top
+    if (href === "#")
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+
+    // Scroll to other links
+    if (href !== "#" && href.startsWith("#")) {
+      console.log(href);
+      const sectionoEl = document.querySelector(href);
+      // console.log(sectionoEl);
+      sectionoEl.scrollIntoView({ behavior: "smooth" });
+    }
+
+    // Close Mobile Navigation
+    if (link.classList.contains("main-nav-link"))
+      headerEl.classList.toggle("nav-open");
+  });
 });
 
 ///////////////////////////////////////////////////////////
