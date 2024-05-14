@@ -131,6 +131,9 @@ INstead, 1rem = 1em = 16px */
   /* MOBILE NAVIGATION */
   .btn-mobile-nav {
     display: block;
+    /* X fokusvimas, kai jis pažymėtas - accessability ! */
+    z-index: 9999;
+    /* rašome 9999 - tikrai didelė vertė, kad tikrai būtų matomas viršuje */
   }
 
   .main-nav {

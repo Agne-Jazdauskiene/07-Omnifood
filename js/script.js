@@ -11,11 +11,23 @@ console.log(h1);
 //   h1.style.padding = "5rem";
 // });
 
-// UPDATING CURRENT YEAR
+///////////////////////////////////////////////////////////
+// SET CURRENT YEAR
 const yearEl = document.querySelector(".year");
 const currentYear = new Date().getFullYear();
 console.log(currentYear);
 yearEl.textContent = currentYear;
+
+///////////////////////////////////////////////////////////
+// MAKE MOBILE NAVIGATION WORK
+
+const btnNavEl = document.querySelector(".btn-mobile-nav");
+const headerEl = document.querySelector(".header");
+
+// toggle - adding and removint all at the same time
+btnNavEl.addEventListener("click", function () {
+  headerEl.classList.toggle("nav-open"); //rašome be taško, tik klasės pavadinimas -> nav-open
+});
 
 ///////////////////////////////////////////////////////////
 // Fixing flexbox gap property missing in some Safari versions
