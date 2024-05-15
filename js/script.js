@@ -64,6 +64,38 @@ allLinks.forEach(function (link) {
 });
 
 ///////////////////////////////////////////////////////////
+// STICKY NAVIGATION
+
+//intersection observer
+// the element that we want to observe is the hero section
+// We want to make the navigation sticky as sooon as this hero section moves out of the view port.
+const sectionHeroEl = document.querySelector(".section-hero");
+
+const obs = new IntersectionObserver(
+  function (entries) {
+    const ent = entries[0];
+    console.log(ent);
+
+    if (ent.isIntersecting === false) {
+      //or if (!ent.isIntersecting)
+      document.body.classList.add("sticky");
+    }
+
+    if (ent.isIntersecting === true) {
+      // or (ent.isIntersecting)
+      document.body.classList.remove("sticky");
+    }
+  },
+  {
+    // In the viewport
+    root: null,
+    threshold: 0,
+    rootMargin: "-80px", //we set heith: 8 px in .sticky .header style.css
+  }
+);
+obs.observe(sectionHeroEl);
+
+///////////////////////////////////////////////////////////
 // Fixing flexbox gap property missing in some Safari versions
 function checkFlexGap() {
   var flex = document.createElement("div");
