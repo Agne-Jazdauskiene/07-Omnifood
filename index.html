@@ -14,7 +14,7 @@
 
 
   <!-- Adding favicon. After the metatext, near other link elements. Important for search engines and good practices-->
-  <link rel="icon" href="img/favicon.pngs">
+  <link rel="icon" href="img/favicon.png">
   <!-- Adding the website as an icon to the iOS home screen -->
   <!-- for Apple -->
   <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
@@ -91,8 +91,13 @@
         </div>
 
         <div class="hero-img-box">
-          <img src="img/hero.png" class="hero-img"
-            alt="Woman enjoying food, meals in storage container, and food bowls on a table" />
+          <picture>
+            <source srcset="img/hero.webp" type="image/webp" />
+            <source srcset="img/hero-min.png" type="image/png" />
+            <img src="img/hero-min.png" class="hero-img"
+              alt="Woman enjoying food, meals in storage container, and food bowls on a table" />
+          </picture>
+
         </div>
       </div>
     </section>
